@@ -1,0 +1,66 @@
+body { background-color: #333; }
+#pp-nav { display: none; }
+
+.music {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 3%;
+  right: 3%;
+  width: 32px;
+  height: 32px;
+  background: url(images/sprites.png) no-repeat;
+  background-position: -358px -110px;
+  cursor: pointer;
+}
+
+.bg-0,
+.bg-1,
+.bg-2,
+.bg-3,
+.bg-4,
+.bg-5,
+.bg-6,
+.bg-7,
+.bg-8,
+.bg-9,
+.bg-10 {
+  max-width: 100%;
+  text-align: center;
+}
+
+.down {
+  z-index: 999;
+  display: block;
+  position: fixed;
+  bottom: 3%;
+  left: 50%;
+  width: 42px;
+  height: 21px;
+  margin-left: -21px;
+  text-decoration: none;
+  animation: fadeUpDown ease 2s infinite;
+  -webkit-animation: fadeUpDown ease 2s infinite;
+}
+
+@keyframes fadeUpDown {
+  0% {
+    opacity:0;
+    transform:  translate(0px,15px)  ;
+  }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px)  ;
+  }
+}
+
+@-webkit-keyframes fadeUpDown {
+  0% {
+    opacity:0;
+    -webkit-transform:  translate(0px,15px)  ;
+  }
+  100% {
+    opacity:1;
+    -webkit-transform:  translate(0px,0px)  ;
+  }
+}
