@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cmn-Hans">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>魅族 MX4 Pro 上市</title>
+  <meta name="description" content="我们是探索者，是先驱｜魅族 MX4 Pro 12月6日10:00 旗舰上市">
+  <meta name="keywords" content="笔戈科技,魅族,手机,星际穿越,探索先驱,魅族 MX4 Pro,旗舰上市">
+  <meta name="bigertech" content="bigertech@foxmail.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <style>
+    html,body{overflow:hidden;margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}.pp-section{height:100%;position:absolute;width:100%}.pp-easing{-webkit-transition:all 1000ms cubic-bezier(0.550, .085, .000, .990);-moz-transition:all 1000ms cubic-bezier(0.550, .085, .000, .990);-o-transition:all 1000ms cubic-bezier(0.550, .085, .000, .990);transition:all 1000ms cubic-bezier(0.550, .085, .000, .990);-webkit-transition-timing-function:cubic-bezier(0.550, .085, .000, .990);-moz-transition-timing-function:cubic-bezier(0.550, .085, .000, .990);-o-transition-timing-function:cubic-bezier(0.550, .085, .000, .990);transition-timing-function:cubic-bezier(0.550, .085, .000, .990)}#pp-nav{position:fixed;z-index:100;margin-top:-32px;top:50%;opacity:1}#pp-nav.right{right:17px}#pp-nav.left{left:17px}.pp-section.pp-table{display:table}.pp-tableCell{display:table-cell;vertical-align:middle;width:100%;height:100%}.pp-slidesNav{position:absolute;z-index:4;left:50%;opacity:1}.pp-slidesNav.bottom{bottom:17px}.pp-slidesNav.top{top:17px}#pp-nav ul,.pp-slidesNav ul{margin:0;padding:0}#pp-nav li,.pp-slidesNav li{display:block;width:14px;height:13px;margin:7px;position:relative}.pp-slidesNav li{display:inline-block}#pp-nav li a,.pp-slidesNav li a{display:block;position:relative;z-index:1;width:100%;height:100%;cursor:pointer;text-decoration:none}#pp-nav li .active span,.pp-slidesNav .active span{background:#333}#pp-nav span,.pp-slidesNav span{top:2px;left:2px;width:8px;height:8px;border:1px solid #000;background:rgba(0, 0, 0, 0);border-radius:50%;position:absolute;z-index:1}.pp-tooltip{position:absolute;top:-2px;color:#fff;font-size:14px;font-family:arial, helvetica, sans-serif;white-space:nowrap;max-width:220px}.pp-tooltip.right{right:20px}.pp-tooltip.left{left:20px}body{background-color:#333}#pp-nav{display:none}.music{background:url(images/sprites.png) no-repeat}.music{position:fixed;z-index:999;top:3%;right:3%;width:32px;height:32px;background-position:-358px -110px;cursor:pointer}.bg-1,.bg-2,.bg-3,.bg-4,.bg-5,.bg-6,.bg-7,.bg-8,.text-7{max-width:100%;text-align:center}.bg-7{-webkit-transition:all 3s;-webkit-transition-delay:cubic-bezier(1,.07,.6,.645);-webkit-transform:translate3d(0,0,0) scale(2.35)}.text-7{position:absolute;top:0;left:0;display:none}.bg-8{height:auto}.down{z-index:999;display:block;position:fixed;bottom:3%;left:50%;width:42px;height:21px;margin-left:-21px;text-decoration:none;animation:fadeUpDown ease 2s infinite;-webkit-animation:fadeUpDown ease 2s infinite}@keyframes fadeUpDown{0%{opacity:0;transform:translate(0px,15px)}100%{opacity:1;transform:translate(0px,0px)}}@-webkit-keyframes fadeUpDown{0%{opacity:0;-webkit-transform:translate(0px,15px)}100%{opacity:1;-webkit-transform:translate(0px,0px)}}
+  </style>
+</head>
+<body>
+
+<audio src="bigertech.mp3"></audio>
+<i class="music is-active"></i>
+<img class="down" src="images/down.png" alt="down"/>
+
+<div id="pagepiling">
+  <div class="section"><img class="bg-1" src="images/1.jpg" alt=""/></div>
+  <div class="section"><img class="bg-2" data-original="images/2.jpg" alt=""/></div>
+  <div class="section"><img class="bg-3" data-original="images/3.jpg" alt=""/></div>
+  <div class="section"><img class="bg-4" data-original="images/4.jpg" alt=""/></div>
+  <div class="section"><img class="bg-5" data-original="images/5.jpg" alt=""/></div>
+  <div class="section"><img class="bg-6" data-original="images/6.jpg" alt=""/></div>
+  <div class="section">
+    <img class="bg-7" data-original="images/7.jpg" alt=""/>
+    <img class="text-7" data-original="images/7-text.jpg" alt=""/>
+  </div>
+  <div class="section">
+    <img class="bg-8" data-original="images/8.jpg" alt=""/>
+  </div>
+</div>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.pagepiling.min.js"></script>
+<script>
+  $(document).ready(function(){var c=$(window).width();var d=$(window).height();for(var b=1;b<7;b++){var a=".bg-"+b;$(a).css("width",c);$(a).css("height",d)}$(".music").on("click",function(){var e=$(this);if(e.hasClass("is-active")){e.css("backgroundPosition","-358px -59px");e.removeClass("is-active");$("audio")[0].pause()}else{e.addClass("is-active");e.css("backgroundPosition","-358px -110px");$("audio")[0].play()}});$("#pagepiling").pagepiling({onLeave:function(f,e,g){if(f==6){$(".down").fadeOut()}if(f==7){$(".down").fadeOut()}},afterLoad:function(f,e){if(e==2){$("audio")[0].play();$(".music").addClass("is-active");$(".bg-3").attr("src","images/3.jpg");$(".bg-4").attr("src","images/4.jpg")}if(e==3){$(".bg-5").attr("src","images/5.jpg")}if(e==4){$(".bg-6").attr("src","images/6.jpg")}if(e==5){$(".bg-7").attr("src","images/7.jpg");$(".text-7").attr("src","images/7-text.jpg")}if(e==6){$(".bg-8").attr("src","images/8.jpg")}if(e==7){$(".bg-7").delay(100).css("-webkit-transform","translate3d(0,0,0) scale(1)");$(".down").delay(2000).fadeIn();$(".text-7").delay(2500).fadeIn(1000)}},afterRender:function(){$(".bg-2").attr("src","images/2.jpg")}})});
+</script>
+<script>
+  var _hmt=_hmt||[];(function(){var b=document.createElement("script");b.src="//hm.baidu.com/hm.js?897c5e90b15f7f050e35c66b6978bd2c";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();
+</script>
+<script>
+  var imgUrl="http://www.bigertech.com/content/images/2014/Dec/wallhaven-34414-1.jpg";var lineLink="http://www.bigertech.com";var descContent="这是笔戈科技的博客";var shareTitle="分享标题";var appid="";function shareFriend(){WeixinJSBridge.invoke("sendAppMessage",{appid:appid,img_url:imgUrl,img_width:"200",img_height:"200",link:lineLink,desc:descContent,title:shareTitle},function(a){})}function shareTimeline(){WeixinJSBridge.invoke("shareTimeline",{img_url:imgUrl,img_width:"200",img_height:"200",link:lineLink,desc:descContent,title:shareTitle},function(a){})}function shareWeibo(){WeixinJSBridge.invoke("shareWeibo",{content:descContent,url:lineLink,},function(a){})}document.addEventListener("WeixinJSBridgeReady",function onBridgeReady(){WeixinJSBridge.on("menu:share:appmessage",function(a){shareFriend()});WeixinJSBridge.on("menu:share:timeline",function(a){shareTimeline()});WeixinJSBridge.on("menu:share:weibo",function(a){shareWeibo()})},false);
+</script>
+</body>
+</html>
