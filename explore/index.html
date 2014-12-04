@@ -43,11 +43,14 @@
     var music  = $('.music');
     var audio  = $('audio')[0];
 
-    for(var i = 0; i <= 10; i++) {
+    for(var i = 1; i <= 8; i++) {
       var bg = '.bg-' + i;
-      $(bg).css('height', width);
+      $(bg).css('width', width);
       $(bg).css('height', height);
     }
+
+    $('.text-7').css('width', width);
+    $('.text-7').css('height', height);
 
     if((height/width) < 1.7 ) {
       $('#pagepiling').pagepiling({
@@ -76,7 +79,7 @@
           }
           if (index == 5) {
             $('.bg-7').attr('src', 'images/7-sm.jpg');
-            $('.text-7').attr('src','images/7-text-sm.jpg');
+            $('.text-7').attr('src', 'images/7-text-sm.jpg');
           }
           if (index == 6) {
             $('.bg-8').attr('src', 'images/8-sm.jpg');
@@ -159,7 +162,7 @@
   var _hmt=_hmt||[];(function(){var b=document.createElement("script");b.src="//hm.baidu.com/hm.js?897c5e90b15f7f050e35c66b6978bd2c";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();
 </script>
 <script>
-  var imgUrl="http://www.bigertech.com/content/images/2014/Dec/wallhaven-34414-1.jpg";var lineLink="http://www.bigertech.com";var descContent="我们是探索者，是先驱";var shareTitle="我们不是守护者，是探索者，是先驱。魅族旗下笔戈科技与环球杂志新媒体联合出品，向太空探索者致敬。图片录音来自NASA资料库，历史录音来自阿波罗11号登月实况录音片段。";var appid="";function shareFriend(){WeixinJSBridge.invoke("sendAppMessage",{appid:appid,img_url:imgUrl,img_width:"200",img_height:"200",link:lineLink,desc:descContent,title:shareTitle},function(a){})}function shareTimeline(){WeixinJSBridge.invoke("shareTimeline",{img_url:imgUrl,img_width:"200",img_height:"200",link:lineLink,desc:descContent,title:shareTitle},function(a){})}function shareWeibo(){WeixinJSBridge.invoke("shareWeibo",{content:descContent,url:lineLink,},function(a){})}document.addEventListener("WeixinJSBridgeReady",function onBridgeReady(){WeixinJSBridge.on("menu:share:appmessage",function(a){shareFriend()});WeixinJSBridge.on("menu:share:timeline",function(a){shareTimeline()});WeixinJSBridge.on("menu:share:weibo",function(a){shareWeibo()})},false);
+  var imgUrl="http://www.bigertech.com/content/images/2014/Dec/wallhaven-34414-1.jpg";var lineLink="http://www.bigertech.com";var descContent="我们不是守护者，是探索者，是先驱。魅族旗下笔戈科技与环球杂志新媒体联合出品，向太空探索者致敬。图片录音来自NASA资料库，历史录音来自阿波罗11号登月实况录音片段。";var shareTitle="我们是探索者，是先驱";var appid="";function shareFriend(){WeixinJSBridge.invoke("sendAppMessage",{appid:appid,img_url:imgUrl,img_width:"200",img_height:"200",link:lineLink,desc:descContent,title:shareTitle},function(a){})}function shareTimeline(){WeixinJSBridge.invoke("shareTimeline",{img_url:imgUrl,img_width:"200",img_height:"200",link:lineLink,desc:descContent,title:shareTitle},function(a){})}function shareWeibo(){WeixinJSBridge.invoke("shareWeibo",{content:descContent,url:lineLink,},function(a){})}document.addEventListener("WeixinJSBridgeReady",function onBridgeReady(){WeixinJSBridge.on("menu:share:appmessage",function(a){shareFriend()});WeixinJSBridge.on("menu:share:timeline",function(a){shareTimeline()});WeixinJSBridge.on("menu:share:weibo",function(a){shareWeibo()})},false);
 </script>
 </body>
 </html>
