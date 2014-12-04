@@ -33,69 +33,80 @@ html, body {
   height: 100%;
 }
 
-body { background-color: #000; }
-#pp-nav { display: none; }
+body    { background-color:#000; }
+#pp-nav { display:none; }
 
 .music {
   display: none;
-  position: fixed;
-  z-index: 999;
-  top: 3%;
-  right: 3%;
-  width: 32px;
-  height: 32px;
-  background: url(images/sprites.png) no-repeat;
-  background-position: -358px -110px;
-  cursor: pointer;
+  position:fixed;
+  z-index:999;
+  top:3%;
+  right:3%;
+  width:32px;
+  height:32px;
+  background:url(images/sprites.png) no-repeat;
+  background-position:-358px -110px;
+  cursor:pointer;
+}
+.bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .text-7 {
+  max-width:100%;
+  text-align:center;
 }
 
-.bg-0,
-.bg-1,
-.bg-2,
-.bg-3,
-.bg-4,
-.bg-5,
-.bg-6,
-.bg-7,
-.bg-8,
-.bg-9,
-.bg-10 {
-  max-width: 100%;
-  text-align: center;
+.bg-7 {
+  -webkit-transition:all 3s;
+  -webkit-transition-delay:cubic-bezier(1, .07, .6, .645);
+  -webkit-transform:translate3d(0, 0, 0) scale(2.35);
+}
+.text-7 {
+  position:absolute;
+  top:0;
+  left:0;
+  display:none;
 }
 
-.down {
-  z-index: 999;
-  display: block;
+.text-8 {
+  display: none;
   position: fixed;
   bottom: 3%;
   left: 50%;
-  width: 42px;
-  height: 21px;
-  margin-left: -21px;
-  text-decoration: none;
-  animation: fadeUpDown ease 2s infinite;
-  -webkit-animation: fadeUpDown ease 2s infinite;
+  width: 135px;
+  height: 36.75px;
+  margin-left: -67.5px;
+  animation:fadeUpDown ease 2s;
+  -webkit-animation:fadeUpDown ease 2s;
 }
 
+.down {
+  z-index:999;
+  display:block;
+  position:fixed;
+  bottom:3%;
+  left:50%;
+  width:42px;
+  height:21px;
+  margin-left:-21px;
+  text-decoration:none;
+  animation:fadeUpDown ease 2s infinite;
+  -webkit-animation:fadeUpDown ease 2s infinite;
+}
 @keyframes fadeUpDown {
   0% {
     opacity:0;
-    transform:  translate(0px,15px)  ;
+    transform:translate(0px, 15px);
   }
   100% {
     opacity:1;
-    transform:  translate(0px,0px)  ;
+    transform:translate(0px, 0px);
   }
 }
-
 @-webkit-keyframes fadeUpDown {
   0% {
     opacity:0;
-    -webkit-transform:  translate(0px,15px)  ;
+    -webkit-transform:translate(0px, 15px);
   }
   100% {
     opacity:1;
-    -webkit-transform:  translate(0px,0px)  ;
+    -webkit-transform:translate(0px, 0px);
   }
 }
