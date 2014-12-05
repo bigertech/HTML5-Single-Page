@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head lang="zh-cmn-Hans">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,231 +9,157 @@
   <meta name="bigertech" content="bigertech@foxmail.com">
   <meta name="viewport" content="width=device-width height=device-height, initial-scale=1.0 user-scalable=no">
   <link rel="shortcut icon" href="images/favicon.ico">
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="index.css"/>
 </head>
-
 <body>
 
-  <audio src="bigertech.mp3" title="bigertech"></audio>
-  <i class="music"></i>
-  <img class="down" src="images/down.png" alt="down" />
+<audio src="bigertech.mp3" title="bigertech"></audio>
+<i class="music"></i>
+<img class="down" src="images/down.png" alt="down"/>
 
-  <div id="pagepiling">
-    <div class="section"><img id="first-img" class="bg-1" data-original="images/1.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-2" data-original="images/2.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-3" data-original="images/3.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-4" data-original="images/4.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-5" data-original="images/5.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-6" data-original="images/6.jpg" alt="bigertech" />
-    </div>
-    <div class="section">
-      <img class="bg-7" data-original="images/7.jpg" alt="bigertech" />
-      <img class="text-7" data-original="images/7-text.jpg" alt="bigertech" />
-    </div>
-    <div class="section">
-      <img class="bg-8" data-original="images/8.jpg" alt="bigertech" />
-      <img class="text-8" data-original="images/8-text.jpg" alt="bigertech" />
-    </div>
+<div id="pagepiling">
+  <div class="section"><img id="first-img" class="bg-1" data-original="images/1.jpg" alt="bigertech"/></div>
+  <div class="section"><img class="bg-2" data-original="images/2.jpg" alt="bigertech"/></div>
+  <div class="section"><img class="bg-3" data-original="images/3.jpg" alt="bigertech"/></div>
+  <div class="section"><img class="bg-4" data-original="images/4.jpg" alt="bigertech"/></div>
+  <div class="section"><img class="bg-5" data-original="images/5.jpg" alt="bigertech"/></div>
+  <div class="section"><img class="bg-6" data-original="images/6.jpg" alt="bigertech"/></div>
+  <div class="section">
+    <img class="bg-7" data-original="images/7.jpg" alt="bigertech"/>
+    <img class="text-7" data-original="images/7-text.jpg" alt="bigertech"/>
   </div>
+  <div class="section">
+    <img class="bg-8" data-original="images/8.jpg" alt="bigertech"/>
+    <img class="text-8" data-original="images/8-text.jpg" alt="bigertech"/>
+  </div>
+</div>
 
-  <script type="text/javascript" src="jquery.min.js"></script>
-  <script type="text/javascript" src="jquery.pagepiling.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      var width = $(window).width();
-      var height = $(window).height();
-      var music = $('.music');
-      var audio = $('audio')[0];
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.pagepiling.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var width  = $(window).width();
+    var height = $(window).height();
+    var music  = $('.music');
+    var audio  = $('audio')[0];
 
-      for (var i = 1; i <= 8; i++) {
-        var bg = '.bg-' + i;
-        $(bg).css('width', width);
-        $(bg).css('height', height);
-      }
+    for(var i = 0; i <= 10; i++) {
+      var bg = '.bg-' + i;
+      $(bg).css('height', width);
+      $(bg).css('height', height);
+    }
 
-      $('.text-7').css('width', width);
-      $('.text-7').css('height', height);
-
-      if ((height / width) < 1.7) {
-        $('#pagepiling').pagepiling({
-          onLeave: function(index, nextIndex, direction) {
-            if (index == 6) {
-              $('.down').fadeOut();
+    if((height/width) < 1.7 ) {
+      $('#pagepiling').pagepiling({
+        onLeave: function (index, nextIndex, direction) {
+          if (index == 6) { $('.down').fadeOut(); }
+          if (index == 7) { $('.down').fadeOut(); }
+        },
+        afterLoad: function (anchorLink, index) {
+          if (index == 2) {
+            if (!music.hasClass('is-first')) {
+              audio.play();
+              music.addClass('is-active');
             }
-            if (index == 7) {
-              $('.down').fadeOut();
-            }
-          },
-          afterLoad: function(anchorLink, index) {
-            if (index == 2) {
-              if (!music.hasClass('is-first')) {
-                audio.play();
-                music.addClass('is-active');
-              }
-              music.css('display', 'block');
-              music.addClass('is-first');
-            }
-            if (index == 2) {
-              $('.bg-3').attr('src', 'images/3-sm.jpg');
-              $('.bg-4').attr('src', 'images/4-sm.jpg');
-            }
-            if (index == 3) {
-              $('.bg-5').attr('src', 'images/5-sm.jpg');
-            }
-            if (index == 4) {
-              $('.bg-6').attr('src', 'images/6-sm.jpg');
-            }
-            if (index == 5) {
-              $('.bg-7').attr('src', 'images/7-sm.jpg');
-              $('.text-7').attr('src', 'images/7-text-sm.jpg');
-            }
-            if (index == 6) {
-              $('.bg-8').attr('src', 'images/8-sm.jpg');
-              $('.text-8').attr('src', 'images/share.png');
-            }
-            if (index == 7) {
-              $('.bg-7').delay(100).css('-webkit-transform', 'translate3d(0,0,0) scale(1)');
-              $('.down').delay(2000).fadeIn();
-              $('.text-7').delay(2500).fadeIn(1000);
-            }
-            if (index == 8) {
-              $('.text-8').fadeIn();
-            }
-          },
-          afterRender: function() {
-            $('.bg-1').attr('src', 'images/1-sm.jpg');
-            $('.bg-2').attr('src', 'images/2-sm.jpg');
+            music.css('display','block');
+            music.addClass('is-first');
           }
-        });
-      } else {
-        $('#pagepiling').pagepiling({
-          onLeave: function(index, nextIndex, direction) {
-            if (index == 6) {
-              $('.down').fadeOut();
-            }
-            if (index == 7) {
-              $('.down').fadeOut();
-            }
-          },
-          afterLoad: function(anchorLink, index) {
-            if (index == 2) {
-              if (!music.hasClass('is-first')) {
-                audio.play();
-                music.addClass('is-active');
-              }
-              music.css('display', 'block');
-              music.addClass('is-first');
-            }
-            if (index == 2) {
-              $('.bg-3').attr('src', 'images/3-lg.jpg');
-              $('.bg-4').attr('src', 'images/4-lg.jpg');
-            }
-            if (index == 3) {
-              $('.bg-5').attr('src', 'images/5-lg.jpg');
-            }
-            if (index == 4) {
-              $('.bg-6').attr('src', 'images/6-lg.jpg');
-            }
-            if (index == 5) {
-              $('.bg-7').attr('src', 'images/7-lg.jpg');
-              $('.text-7').attr('src', 'images/7-text-lg.jpg');
-            }
-            if (index == 6) {
-              $('.bg-8').attr('src', 'images/8-lg.jpg');
-              $('.text-8').attr('src', 'images/share.png');
-            }
-            if (index == 7) {
-              $('.bg-7').delay(100).css('-webkit-transform', 'translate3d(0,0,0) scale(1)');
-              $('.down').delay(2000).fadeIn();
-              $('.text-7').delay(2500).fadeIn(1000);
-            }
-            if (index == 8) {
-              $('.text-8').fadeIn();
-            }
-          },
-          afterRender: function() {
-            $('.bg-1').attr('src', 'images/1-lg.jpg');
-            $('.bg-2').attr('src', 'images/2-lg.jpg');
+          if (index == 2) {
+            $('.bg-3').attr('src', 'images/3-sm.jpg');
+            $('.bg-4').attr('src', 'images/4-sm.jpg');
           }
-        });
-      }
-
-      music.on('click', function() {
-        if (music.hasClass('is-active')) {
-          music.css('backgroundPosition', '-358px -59px');
-          music.removeClass('is-active');
-          audio.pause();
-        } else {
-          music.addClass('is-active');
-          music.css('backgroundPosition', '-358px -110px');
-          audio.play();
+          if (index == 3) {
+            $('.bg-5').attr('src', 'images/5-sm.jpg');
+          }
+          if (index == 4) {
+            $('.bg-6').attr('src', 'images/6-sm.jpg');
+          }
+          if (index == 5) {
+            $('.bg-7').attr('src', 'images/7-sm.jpg');
+            $('.text-7').attr('src','images/7-text-sm.jpg');
+          }
+          if (index == 6) {
+            $('.bg-8').attr('src', 'images/8-sm.jpg');
+            $('.text-8').attr('src','images/share.png');
+          }
+          if (index == 7) {
+            $('.bg-7').delay(100).css('-webkit-transform','translate3d(0,0,0) scale(1)');
+            $('.down').delay(2000).fadeIn();
+            $('.text-7').delay(2500).fadeIn(1000);
+          }
+          if (index == 8) { $('.text-8').fadeIn(); }
+        },
+        afterRender: function () {
+          $('.bg-1').attr('src', 'images/1-sm.jpg');
+          $('.bg-2').attr('src', 'images/2-sm.jpg');
         }
-      })
-
-    });
-  </script>
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var b = document.createElement("script");
-      b.src = "//hm.baidu.com/hm.js?897c5e90b15f7f050e35c66b6978bd2c";
-      var a = document.getElementsByTagName("script")[0];
-      a.parentNode.insertBefore(b, a)
-    })();
-  </script>
-  <script>
-    var imgUrl = "http://bigertech.res.meizu.com/page/explore/images/share.jpg";
-    var lineLink = "http://www.bigertech.com/page/explore";
-    var descContent = "向太空探索者致敬！本页面由魅族旗下笔戈科技与环球杂志新媒体联合出品，图片录音来自NASA资料库，历史录音来自阿波罗11号登月实况录音片段。";
-    var shareTitle = "我们是探索者，是先驱";
-    var appid = "";
-
-    function shareFriend() {
-      WeixinJSBridge.invoke("sendAppMessage", {
-        appid: appid,
-        img_url: imgUrl,
-        img_width: "200",
-        img_height: "200",
-        link: lineLink,
-        desc: descContent,
-        title: shareTitle
-      }, function(a) {})
-    }
-
-    function shareTimeline() {
-      WeixinJSBridge.invoke("shareTimeline", {
-        img_url: imgUrl,
-        img_width: "200",
-        img_height: "200",
-        link: lineLink,
-        desc: descContent,
-        title: shareTitle
-      }, function(a) {})
-    }
-
-    function shareWeibo() {
-      WeixinJSBridge.invoke("shareWeibo", {
-        content: descContent,
-        url: lineLink,
-      }, function(a) {})
-    }
-    document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
-      WeixinJSBridge.on("menu:share:appmessage", function(a) {
-        shareFriend()
       });
-      WeixinJSBridge.on("menu:share:timeline", function(a) {
-        shareTimeline()
+    } else {
+      $('#pagepiling').pagepiling({
+        onLeave: function (index, nextIndex, direction) {
+          if (index == 6) { $('.down').fadeOut(); }
+          if (index == 7) { $('.down').fadeOut(); }
+        },
+        afterLoad: function (anchorLink, index) {
+          if (index == 2) {
+            if (!music.hasClass('is-first')) {
+              audio.play();
+              music.addClass('is-active');
+            }
+            music.css('display','block');
+            music.addClass('is-first');
+          }
+          if (index == 2) {
+            $('.bg-3').attr('src', 'images/3-lg.jpg');
+            $('.bg-4').attr('src', 'images/4-lg.jpg');
+          }
+          if (index == 3) {
+            $('.bg-5').attr('src', 'images/5-lg.jpg');
+          }
+          if (index == 4) {
+            $('.bg-6').attr('src', 'images/6-lg.jpg');
+          }
+          if (index == 5) {
+            $('.bg-7').attr('src', 'images/7-lg.jpg');
+            $('.text-7').attr('src','images/7-text-lg.jpg');
+          }
+          if (index == 6) {
+            $('.bg-8').attr('src', 'images/8-lg.jpg');
+            $('.text-8').attr('src','images/share.png');
+          }
+          if (index == 7) {
+            $('.bg-7').delay(100).css('-webkit-transform','translate3d(0,0,0) scale(1)');
+            $('.down').delay(2000).fadeIn();
+            $('.text-7').delay(2500).fadeIn(1000);
+          }
+          if (index == 8) { $('.text-8').fadeIn();}
+        },
+        afterRender: function () {
+          $('.bg-1').attr('src', 'images/1-lg.jpg');
+          $('.bg-2').attr('src', 'images/2-lg.jpg');
+        }
       });
-      WeixinJSBridge.on("menu:share:weibo", function(a) {
-        shareWeibo()
-      })
-    }, false);
-  </script>
+    }
+
+    music.on('click', function () {
+      if (music.hasClass('is-active')) {
+        music.css('backgroundPosition', '-358px -59px');
+        music.removeClass('is-active');
+        audio.pause();
+      } else {
+        music.addClass('is-active');
+        music.css('backgroundPosition', '-358px -110px');
+        audio.play();
+      }
+    })
+
+  });
+</script>
+<script>
+  var _hmt=_hmt||[];(function(){var b=document.createElement("script");b.src="//hm.baidu.com/hm.js?897c5e90b15f7f050e35c66b6978bd2c";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();
+</script>
+<script>
+  var imgUrl="http://www.bigertech.com/content/images/2014/Dec/wallhaven-34414-1.jpg";var lineLink="http://www.bigertech.com";var descContent="我们是探索者，是先驱";var shareTitle="我们不是守护者，是探索者，是先驱。魅族旗下笔戈科技与环球杂志新媒体联合出品，向太空探索者致敬。图片录音来自NASA资料库，历史录音来自阿波罗11号登月实况录音片段。";var appid="";function shareFriend(){WeixinJSBridge.invoke("sendAppMessage",{appid:appid,img_url:imgUrl,img_width:"200",img_height:"200",link:lineLink,desc:descContent,title:shareTitle},function(a){})}function shareTimeline(){WeixinJSBridge.invoke("shareTimeline",{img_url:imgUrl,img_width:"200",img_height:"200",link:lineLink,desc:descContent,title:shareTitle},function(a){})}function shareWeibo(){WeixinJSBridge.invoke("shareWeibo",{content:descContent,url:lineLink,},function(a){})}document.addEventListener("WeixinJSBridgeReady",function onBridgeReady(){WeixinJSBridge.on("menu:share:appmessage",function(a){shareFriend()});WeixinJSBridge.on("menu:share:timeline",function(a){shareTimeline()});WeixinJSBridge.on("menu:share:weibo",function(a){shareWeibo()})},false);
+</script>
 </body>
-
 </html>
