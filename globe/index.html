@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head lang="zh-cmn-Hans">
   <meta charset="UTF-8">
-  <!--   <base href="http://bigertech.res.meizu.com/page/explore/"> -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>星际穿越 你没听到的七句独白</title>
   <meta name="description" content="「星际穿越」你没听到的七句独白，我们不是守护者，是探索者，是先驱。魅族旗下笔戈科技与环球杂志新媒体联合出品，图片录音来自NASA资料库，历史录音来自阿波罗11号登月实况录音片段，向太空探索者致敬。">
@@ -14,36 +12,23 @@
   <link rel="stylesheet" type="text/css" href="jquery.pagepiling.css">
   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
-
 <body>
-
   <audio src="bigertech.mp3" title="bigertech"></audio>
   <span class="music"></span>
   <img class="down" src="images/down.png" alt="down">
 
   <div id="pagepiling">
-    <div class="section"><img class="bg-0" data-original="images/0.jpg" alt="" />
-    </div>
-    <div class="section"><img class="bg-1" data-original="images/1.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-2" data-original="images/2.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-3" data-original="images/3.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-4" data-original="images/4.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-5" data-original="images/5.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-6" data-original="images/6.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-7" data-original="images/7.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-8" data-original="images/8.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-9" data-original="images/9.jpg" alt="bigertech" />
-    </div>
-    <div class="section"><img class="bg-10" data-original="images/10.jpg" alt="bigertech" />
-    </div>
+    <div class="section"><img class="bg-0" data-original="images/0.jpg" alt=""/></div>
+    <div class="section"><img class="bg-1" data-original="images/1.jpg" alt="bigertech"/></div>
+    <div class="section"><img class="bg-2" data-original="images/2.jpg" alt="bigertech"/></div>
+    <div class="section"><img class="bg-3" data-original="images/3.jpg" alt="bigertech"/></div>
+    <div class="section"><img class="bg-4" data-original="images/4.jpg" alt="bigertech"/></div>
+    <div class="section"><img class="bg-5" data-original="images/5.jpg" alt="bigertech"/></div>
+    <div class="section"><img class="bg-6" data-original="images/6.jpg" alt="bigertech"/></div>
+    <div class="section"><img class="bg-7" data-original="images/7.jpg" alt="bigertech"/></div>
+    <div class="section"><img class="bg-8" data-original="images/8.jpg" alt="bigertech"/></div>
+    <div class="section"><img class="bg-9" data-original="images/9.jpg" alt="bigertech"/></div>
+    <div class="section"><img class="bg-10" data-original="images/10.jpg" alt="bigertech"/></div>
   </div>
 
   <script type="text/javascript" src="jquery.min.js"></script>
@@ -51,35 +36,35 @@
   <script>
     "use strict";
     $(document).ready(function() {
-      var width = $(window).width(),
-        height = $(window).height(),
-        music = $('.music'),
-        audio = $('audio')[0],
-        bg, prefix, i,
-        setup = function() {
-          $('.bg-0').attr('src', 'images/0-' + prefix + '.jpg');
-          $('.bg-1').attr('src', 'images/1-' + prefix + '.jpg');
-        },
-        setSrc = function(index) {
-          var num = index + 1;
-          if (index == 2) {
-            $('.bg-2').attr('src', 'images/2-' + prefix + '.jpg');
-            $('.bg-3').attr('src', 'images/3-' + prefix + '.jpg');
-            if (!music.hasClass('is-first')) {
-              audio.play();
-              music.addClass('is-active');
+      var width  = $(window).width(),
+          height = $(window).height(),
+          music  = $('.music'),
+          audio  = $('audio')[0],
+          bg, prefix, i,
+          setup  = function() {
+            $('.bg-0').attr('src', 'images/0-' + prefix + '.jpg');
+            $('.bg-1').attr('src', 'images/1-' + prefix + '.jpg');
+          },
+          setSrc = function(index) {
+            var num = index + 1;
+            if (index == 2) {
+              $('.bg-2').attr('src', 'images/2-' + prefix + '.jpg');
+              $('.bg-3').attr('src', 'images/3-' + prefix + '.jpg');
+              if (!music.hasClass('is-first')) {
+                audio.play();
+                music.addClass('is-active');
+              }
+              music.css('display','block');
+              music.addClass('is-first');
+            } else {
+              $('.bg-' + num).attr('src', 'images/' + num + '-' + prefix + '.jpg');
             }
-            music.css('display', 'block');
-            music.addClass('is-first');
-          } else {
-            $('.bg-' + num).attr('src', 'images/' + num + '-' + prefix + '.jpg');
-          }
-        },
-        maybeFade = function(index) {
-          if (index == 10) {
-            $('.down').fadeOut();
-          }
-        };
+          },
+          maybeFade = function(index) {
+            if (index == 10) {
+              $('.down').fadeOut();
+            }
+          };
       for (i = 0; i <= 10; i++) {
         bg = '.bg-' + i;
         $(bg).css({
@@ -89,17 +74,17 @@
       }
       prefix = (height / width) < 1.7 ? "sm" : "lg";
       $('#pagepiling').pagepiling({
-        onLeave: function(index, nextIndex, direction) {
+        onLeave: function (index, nextIndex, direction) {
           maybeFade(index);
         },
-        afterLoad: function(anchorLink, index) {
+        afterLoad: function (anchorLink, index) {
           setSrc(index);
         },
-        afterRender: function() {
+        afterRender: function () {
           setup();
         }
       });
-      music.on('click', function() {
+      music.on('click', function () {
         if (music.hasClass('is-active')) {
           music.css('backgroundPosition', '-358px -59px');
           music.removeClass('is-active');
@@ -114,7 +99,7 @@
   </script>
   <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
       var hm = document.createElement("script");
       hm.src = "//hm.baidu.com/hm.js?897c5e90b15f7f050e35c66b6978bd2c";
       var s = document.getElementsByTagName("script")[0];
@@ -123,12 +108,11 @@
   </script>
   <script>
     var imgUrl =
-      'http://bigertech.res.meizu.com/page/globe/images/share.jpg';
-    var lineLink = 'http://www.bigertech.com/page/explore';
-    var descContent = "向太空探索者致敬！本页面由魅族旗下笔戈科技与环球杂志新媒体联合出品，图片录音来自NASA资料库，历史录音来自阿波罗11号登月实况录音片段。";
-    var shareTitle = '星际穿越 你没听到的七句独白';
+        'http://www.bigertech.com/content/images/2014/Dec/wallhaven-34414-1.jpg';
+    var lineLink = 'http://www.bigertech.com';
+    var descContent = "我们不是守护者，是探索者，是先驱。魅族旗下笔戈科技与环球杂志新媒体联合出品，向太空探索者致敬。图片录音来自NASA资料库，历史录音来自阿波罗11号登月实况录音片段。"; // 小于 100个字
+    var shareTitle = '星际穿越 你没听到的七句独白'; // 小于 30个字
     var appid = '';
-
     function shareFriend() {
       WeixinJSBridge.invoke('sendAppMessage', {
         "appid": appid,
@@ -142,7 +126,6 @@
         //_report('send_msg', res.err_msg);
       })
     }
-
     function shareTimeline() {
       WeixinJSBridge.invoke('shareTimeline', {
         "img_url": imgUrl,
@@ -155,16 +138,15 @@
         //_report('timeline', res.err_msg);
       });
     }
-
     function shareWeibo() {
-        WeixinJSBridge.invoke('shareWeibo', {
-          "content": descContent,
-          "url": lineLink,
-        }, function(res) {
-          //_report('weibo', res.err_msg);
-        });
-      }
-      // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+      WeixinJSBridge.invoke('shareWeibo', {
+        "content": descContent,
+        "url": lineLink,
+      }, function(res) {
+        //_report('weibo', res.err_msg);
+      });
+    }
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
     document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
       // 发送给好友
       WeixinJSBridge.on('menu:share:appmessage', function(argv) {
@@ -181,5 +163,4 @@
     }, false);
   </script>
 </body>
-
 </html>
