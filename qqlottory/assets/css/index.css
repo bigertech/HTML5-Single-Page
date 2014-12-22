@@ -1,0 +1,42 @@
+html, body {
+    overflow:hidden;
+    margin:0 auto;
+    padding:0;
+
+    /*Avoid flicker on slides transitions for mobile phones #336 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.content {
+    position:fixed;
+    z-index:-1;
+    margin: 0 auto;
+}
+
+.content img{
+
+    heiht:100%;
+    width:100%;
+}
+#title {
+    position: absolute;
+    top: 12%;
+    text-align:center;
+
+}
+#numberInput {
+    position: absolute;
+    width: 479px;
+    height: 106px;
+    top: 40%;
+    background: url(../images/input-bg.png);
+
+}
+#commitButton {
+    position: absolute;
+    width: 479px;
+    height: 106px;
+    top: 60%;
+    background: url(../images/button-bg.png);
+
+
+}
