@@ -1,0 +1,28 @@
+{
+  "name": "front-end-template",
+  "version": "1.0.0",
+  "authors": [
+    "orangehat <orangehat.rb@gmail.com>"
+  ],
+  "description": "front-end-template",
+  "keywords": [
+    "css",
+    "less",
+    "js",
+    "mobile-first",
+    "responsive",
+    "front-end"
+  ],
+  "license": "MIT",
+  "homepage": "about.me/orangehat",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0"
+  }
+}
