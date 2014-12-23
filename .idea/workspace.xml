@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e2d8d67-6d52-4a0a-9872-203a6d524dc7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/qqlottory/assets/less/grids.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/qqlottory/assets/less/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/qqlottory/assets/less/main.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/qqlottory/assets/less/mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/qqlottory/assets/less/normalize.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/qqlottory/assets/less/typography.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/qqlottory/assets/less/utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/qqlottory/assets/less/variables.less" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/qqlottory/assets/css/index1.css" afterPath="$PROJECT_DIR$/qqlottory/assets/css/index.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/qqlottory/assets/css/index1.less" afterPath="$PROJECT_DIR$/qqlottory/assets/css/index.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qqlottory/index.html" afterPath="$PROJECT_DIR$/qqlottory/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HTML5-Single-Page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,12 +28,12 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/qqlottory/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71746576" vertical-offset="1141" max-vertical-offset="1725">
-              <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.97431505" vertical-offset="31" max-vertical-offset="1500">
+              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1419337961000" expanded="true" signature="1126:1279" placeholder="..." />
+                <marker date="1419338218000" expanded="true" signature="1126:1279" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -363,7 +352,7 @@
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1419337961000" expanded="true" signature="1126:1279" placeholder="..." />
+            <marker date="1419338218000" expanded="true" signature="1126:1279" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -399,7 +388,7 @@
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1419337961000" expanded="true" signature="1126:1279" placeholder="..." />
+            <marker date="1419338218000" expanded="true" signature="1126:1279" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -452,7 +441,7 @@
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1419337961000" expanded="true" signature="1126:1279" placeholder="..." />
+            <marker date="1419338218000" expanded="true" signature="1126:1279" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -600,12 +589,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/qqlottory/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71746576" vertical-offset="1141" max-vertical-offset="1725">
-          <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.97431505" vertical-offset="31" max-vertical-offset="1500">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1419337961000" expanded="true" signature="1126:1279" placeholder="..." />
+            <marker date="1419338218000" expanded="true" signature="1126:1279" placeholder="..." />
           </folding>
         </state>
       </provider>
