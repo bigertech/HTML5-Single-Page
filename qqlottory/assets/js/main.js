@@ -4,7 +4,7 @@
  *
  */
 
-$(function() {
+$(function () {
 
   function isLucer() {
     var code = parseInt($('#numberInput').val());
@@ -18,14 +18,13 @@ $(function() {
     var isLucker = result >= 0 ? true : false;
 
     if (isLucker) {
-      //alert('恭喜你中奖了，赶快把这个好消息分享给朋友吧。请关注魅蓝空间，我们将会在24日12点公布具体的领奖方式');
-      showMask_Success();
+      showMask("1");
     } else {
-      showMask();
+      showMask("0");
     }
-
   }
-  $("#numberInput").keydown(function(event) {
+
+  $("#numberInput").keydown(function (event) {
     if (event.which == 13) {
       isLucer();
       return false;
@@ -78,7 +77,7 @@ $(function() {
       "link": lineLink,
       "desc": descContent,
       "title": shareTitle
-    }, function(res) {
+    }, function (res) {
       //_report('send_msg', res.err_msg);
     })
   }
@@ -91,75 +90,69 @@ $(function() {
       "link": lineLink,
       "desc": descContent,
       "title": shareTitle
-    }, function(res) {
+    }, function (res) {
       //_report('timeline', res.err_msg);
     });
   }
 
   function shareWeibo() {
-      WeixinJSBridge.invoke('shareWeibo', {
-        "content": descContent,
-        "url": lineLink,
-      }, function(res) {
-        //_report('weibo', res.err_msg);
-      });
-    }
-    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    WeixinJSBridge.invoke('shareWeibo', {
+      "content": descContent,
+      "url": lineLink,
+    }, function (res) {
+      //_report('weibo', res.err_msg);
+    });
+  }
+
+  // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
   document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
     // 发送给好友
-    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+    WeixinJSBridge.on('menu:share:appmessage', function (argv) {
       shareFriend();
     });
     // 分享到朋友圈
-    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+    WeixinJSBridge.on('menu:share:timeline', function (argv) {
       shareTimeline();
     });
     // 分享到微博
-    WeixinJSBridge.on('menu:share:weibo', function(argv) {
+    WeixinJSBridge.on('menu:share:weibo', function (argv) {
       shareWeibo();
     });
   }, false);
 
-
   //显示模板
-  function showMask() {
-      $(".modal-failed").css({
-        "top": 0
-      });
-      var offset = document.body.scrollTop;
-      var hall = window.innerHeight;
-      var width = window.innerWidth;
-      var hWindow = $(".modal-main").innerHeight();
-      var wWindow = $(".modal-main").outerWidth() + 20;
-      $(".modal-main").css("left", (width - wWindow) / 2);
-      $(".modal-main").css("top", (hall - 267) / 2);
-      $(".modal-failed").css("display", 'block');
-    }
-    //显示模板
-  function showMask_Success() {
+  function showMask(status) {
 
-    $(".modal-succeed").css({
-      "top": 0
-    });
-    var offset = document.body.scrollTop;
+    $(".modal").css({"top": 0});
     var hall = window.innerHeight;
     var width = window.innerWidth;
-    var hWindow = $(".modal-main").innerHeight();
+    var hWindow = $(".modal-main").outerHeight() + 20;
     var wWindow = $(".modal-main").outerWidth() + 20;
+
+    console.log(hWindow +"----"+hall);
+
     $(".modal-main").css("left", (width - wWindow) / 2);
-    $(".modal-main").css("top", (hall - 267) / 2);
-    $(".modal-succeed").css("display", 'block');
+    $(".modal-main").css("top", (hall - hWindow) / 2);
+
+    if (status === "0") {
+      $(".modal-failed").css("display", 'block');
+    } else if (status === "1") {
+      $(".modal-succeed").css("display", 'block');
+    }
   }
 
-  $('.modal').on('click', function() {
-    setTimeout(function() {
+  $('.modal').on('click', function () {
+    setTimeout(function () {
       $('.modal').css('display', 'none');
     }, 500);
   });
 
-  $('.close').on('click', function() {
+  $('.close').on('click', function () {
     $('.modal').css("display", 'none');
   });
 
+  $(document).ready(function () {
+    $('#numberInput').focus();
+  });
 
 });
