@@ -23,6 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": ">= 1.9.0"
+    "jquery": ">= 1.9.0",
+    "css-modal": "~1.2.0"
   }
 }
