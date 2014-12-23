@@ -129,8 +129,6 @@ $(function () {
     var hWindow = $(".modal-main").outerHeight() + 20;
     var wWindow = $(".modal-main").outerWidth() + 20;
 
-    console.log(hWindow +"----"+hall);
-
     $(".modal-main").css("left", (width - wWindow) / 2);
     $(".modal-main").css("top", (hall - hWindow) / 2);
 
