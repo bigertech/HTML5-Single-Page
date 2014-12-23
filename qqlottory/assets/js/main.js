@@ -4,36 +4,34 @@
  *
  */
 
-$(function () {
+$(function() {
 
-  $('#commitButton').on('click', function () {
+  function isLucer() {
     var code = parseInt($('#numberInput').val());
-    if($('#numberInput').val() === ""){
+    if ($('#numberInput').val() === "") {
       return false;
     }
 
     var random = Math.ceil((Math.random() * 3));
-    var luckyNumber = getLucker(3076.49, 10591.54, 65302, 10);        //计算中奖号码
-    var result = $.inArray(code, luckyNumber);            //是否为中奖号码
+    var luckyNumber = getLucker(3076.49, 10591.54, 65302, 10); //计算中奖号码
+    var result = $.inArray(code, luckyNumber); //是否为中奖号码
     var isLucker = result >= 0 ? true : false;
+
     if (isLucker) {
       //alert('恭喜你中奖了，赶快把这个好消息分享给朋友吧。请关注魅蓝空间，我们将会在24日12点公布具体的领奖方式');
       showMask_Success();
     } else {
       showMask();
-      switch (random) {
-        case 1:
-         // alert('真可惜，这次运气不好…关注XX，下次中奖的说不定就是你哦。');
-          break;
-        case 2:
-          //alert('残念，这次不是你… 不过XX还会有这样的抽奖哦， 快来关注吧');
-          break;
-        default:
-          //alert('…… 没中……别灰心，关注xx，会不定期有各种福利赠送~');
-      }
     }
 
+  }
+  $("#numberInput").keydown(function(event) {
+    if (event.which == 13) {
+      isLucer();
+      return false;
+    }
   });
+  $('#commitButton').on('click ', isLucer);
 
 
   /**
@@ -99,14 +97,14 @@ $(function () {
   }
 
   function shareWeibo() {
-    WeixinJSBridge.invoke('shareWeibo', {
-      "content": descContent,
-      "url": lineLink,
-    }, function(res) {
-      //_report('weibo', res.err_msg);
-    });
-  }
-  // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+      WeixinJSBridge.invoke('shareWeibo', {
+        "content": descContent,
+        "url": lineLink,
+      }, function(res) {
+        //_report('weibo', res.err_msg);
+      });
+    }
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
   document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
     // 发送给好友
     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
@@ -124,39 +122,43 @@ $(function () {
 
 
   //显示模板
-  function showMask(){
-    $(".modal-failed").css({"top":0});
+  function showMask() {
+      $(".modal-failed").css({
+        "top": 0
+      });
+      var offset = document.body.scrollTop;
+      var hall = window.innerHeight;
+      var width = window.innerWidth;
+      var hWindow = $(".modal-main").innerHeight();
+      var wWindow = $(".modal-main").outerWidth() + 20;
+      $(".modal-main").css("left", (width - wWindow) / 2);
+      $(".modal-main").css("top", (hall - 267) / 2);
+      $(".modal-failed").css("display", 'block');
+    }
+    //显示模板
+  function showMask_Success() {
+
+    $(".modal-succeed").css({
+      "top": 0
+    });
     var offset = document.body.scrollTop;
     var hall = window.innerHeight;
     var width = window.innerWidth;
     var hWindow = $(".modal-main").innerHeight();
-    var wWindow = $(".modal-main").width();
-    $(".modal-main").css("left",(width-wWindow)/2);
-    $(".modal-main").css("top",(hall-267)/2);
-    $(".modal-failed").css("display",'block');
-  }
-  //显示模板
-  function showMask_Success(){
-
-    $(".modal-succeed").css({"top":0});
-    var offset = document.body.scrollTop;
-    var hall = window.innerHeight;
-    var width = window.innerWidth;
-    var hWindow = $(".modal-main").innerHeight();
-    var wWindow = $(".modal-main").width();
-    $(".modal-main").css("left",(width-wWindow)/2);
-    $(".modal-main").css("top",(hall-267)/2);
-    $(".modal-succeed").css("display",'block');
+    var wWindow = $(".modal-main").outerWidth() + 20;
+    $(".modal-main").css("left", (width - wWindow) / 2);
+    $(".modal-main").css("top", (hall - 267) / 2);
+    $(".modal-succeed").css("display", 'block');
   }
 
-  $('.modal').on('click', function () {
-    setTimeout(function () {
-      $('.modal').css('display','none');
+  $('.modal').on('click', function() {
+    setTimeout(function() {
+      $('.modal').css('display', 'none');
     }, 500);
   });
 
-  $('.close').on('click', function () {
-   $('.modal').css("display",'none');
+  $('.close').on('click', function() {
+    $('.modal').css("display", 'none');
   });
 
 
