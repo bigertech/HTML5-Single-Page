@@ -7,10 +7,11 @@ body {
   width: 100%;
   /*Avoid flicker on slides transitions for mobile phones #336 */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font: 400 1em/1.8 Helvetica, Tahoma, Arial, 'Hiragino Sans GB', "冬青黑体", "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", SimSun, "宋体", sans-serif;
 }
 #main {
   height: 100%;
-  background: url(../images/background.png) fixed center center no-repeat;
+  background: url("../images/background.png") fixed center center no-repeat;
   background-size: cover;
   width: 100%;
 }
@@ -84,16 +85,14 @@ body {
   width: 100%;
   height: 100%;
   background: #fff;
-  opacity: .8;
+  opacity: 0.8;
 }
 .modal-main {
   position: absolute;
-  width: 582px;
-  height: 267px;
+  width: 595px;
+  height: 295px;
 }
 .modal-container {
-  width: 520px;
-  height: 267px;
   border: 10px solid #d43a3a;
   background-color: #e64938;
   color: #fff;
@@ -103,13 +102,12 @@ body {
 }
 .modal-failed-main {
   position: relative;
-  margin-top: 87px;
-  margin-left: 60px;
+  margin: 62px 72px;
 }
 .close {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -42px;
   cursor: pointer;
 }
 .failed-center {
@@ -125,28 +123,46 @@ body {
   position: relative;
   top: 0;
   display: block;
-  font-size: 24px;
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 30px 8px 0;
+}
+p.phone {
+  display: none;
 }
 .good {
-  margin-top: 70px;
+  margin-top: 62px;
 }
 .modal-success-main {
   text-align: center;
 }
 .text-succeed {
-  padding: 5px;
   display: block;
+  font-size: 24px;
+}
+.text-succeed2 {
+  padding-bottom: 30px;
 }
 .attention {
-  margin-top: 46px;
+  margin-bottom: 62px;
 }
 .text-atten {
   display: block;
-  font-size: 14px;
+  font-size: 18px;
+}
+.failed-small {
+  font-size: 18px;
 }
 .text-atten-sm {
   display: none;
   font-size: 14px;
+}
+.text-atten-failed {
+  line-height: 1;
+  margin: 8px;
+}
+.qrcode {
+  width: 142px;
 }
 @media screen and (max-width: 1441px) {
   .title {
@@ -172,10 +188,10 @@ body {
 }
 @media screen and (max-width: 768px) {
   #main {
-    background: url(../images/background-sm.png) fixed center center no-repeat;
+    background: url("../images/background-sm.png") fixed center center no-repeat;
   }
   .title {
-    padding-top: 92px;
+    padding-top: 42px;
   }
   .title,
   .title2 {
@@ -206,25 +222,39 @@ body {
   .qrcode {
     display: none;
   }
+  p.phone {
+    display: block;
+  }
+  p.pc {
+    display: none;
+  }
+  .weixin-code {
+    font-family: verdana;
+    font-size: 22px;
+    line-height: 1;
+  }
   .close {
     display: none;
   }
   .modal-failed-main {
     position: relative;
-    margin-top: 20px;
-    margin-left: 0;
+    margin: 20px 0 0;
   }
   .text-atten-failed {
     display: block;
   }
   .failed {
     margin-left: 0;
+    width: auto;
   }
   .good {
     margin-top: 20px;
   }
+  .text-succeed {
+    font-size: 14px;
+  }
   .text-failed {
-    font-size: 16px;
+    font-size: 14px;
   }
   .text-atten-sm {
     margin-top: 10px;
@@ -236,13 +266,16 @@ body {
   .btn-commit {
     line-height: 40px;
   }
+  p {
+    line-height: 0;
+  }
 }
 @media screen and (max-width: 568px) {
   .title {
     padding-top: 40px;
   }
   .title2 {
-    padding-top: 10px;
+    padding-top: 0;
   }
   .title,
   .title2 {

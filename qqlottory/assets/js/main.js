@@ -4,7 +4,7 @@
  *
  */
 
-$(function () {
+$(function() {
 
   function isLucer() {
     var code = parseInt($('#numberInput').val());
@@ -24,7 +24,7 @@ $(function () {
     }
   }
 
-  $("#numberInput").keydown(function (event) {
+  $("#numberInput").keydown(function(event) {
     if (event.which == 13) {
       isLucer();
       return false;
@@ -60,70 +60,87 @@ $(function () {
     }
     return result;
   }
+  if (-[1, ]) {
 
-  var imgUrl =
-    'http://www.bigertech.com/project/qzone/assets/images/qzone.jpg';
-  var lineLink = 'http://www.bigertech.com/project/qzone';
-  var descContent = "万分之一！我居然中了一台魅蓝Note，魅族的抽奖是真的！赶快分享好友，让他们沾沾喜气！"; // 小于 100个字
-  var shareTitle = '万分之一！我居然中了一台魅蓝Note，魅族的抽奖是真的！赶快分享好友，让他们沾沾喜气！'; // 小于 30个字
-  var appid = '';
 
-  function shareFriend() {
-    WeixinJSBridge.invoke('sendAppMessage', {
-      "appid": appid,
-      "img_url": imgUrl,
-      "img_width": "200",
-      "img_height": "200",
-      "link": lineLink,
-      "desc": descContent,
-      "title": shareTitle
-    }, function (res) {
-      //_report('send_msg', res.err_msg);
-    })
+    var imgUrl =
+      'http://www.bigertech.com/project/qzone/assets/images/qzone.jpg';
+    var lineLink = 'http://www.bigertech.com/project/qzone';
+    var descContent = "万分之一！我居然中了一台魅蓝Note，魅族的抽奖是真的！赶快分享好友，让他们沾沾喜气！"; // 小于 100个字
+    var shareTitle = '万分之一！我居然中了一台魅蓝Note，魅族的抽奖是真的！赶快分享好友，让他们沾沾喜气！'; // 小于 30个字
+    var appid = '';
+
+    function shareFriend() {
+      WeixinJSBridge.invoke('sendAppMessage', {
+        "appid": appid,
+        "img_url": imgUrl,
+        "img_width": "200",
+        "img_height": "200",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+      }, function(res) {
+        //_report('send_msg', res.err_msg);
+      })
+    }
+
+    function shareTimeline() {
+      WeixinJSBridge.invoke('shareTimeline', {
+        "img_url": imgUrl,
+        "img_width": "200",
+        "img_height": "200",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+      }, function(res) {
+        //_report('timeline', res.err_msg);
+      });
+    }
+
+    function shareWeibo() {
+        WeixinJSBridge.invoke('shareWeibo', {
+          "content": descContent,
+          "url": lineLink,
+        }, function(res) {
+          //_report('weibo', res.err_msg);
+        });
+      }
+      // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+      // 发送给好友
+      WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+        shareFriend();
+      });
+      // 分享到朋友圈
+      WeixinJSBridge.on('menu:share:timeline', function(argv) {
+        shareTimeline();
+      });
+      // 分享到微博
+      WeixinJSBridge.on('menu:share:weibo', function(argv) {
+        shareWeibo();
+      });
+    }, false);
   }
-
-  function shareTimeline() {
-    WeixinJSBridge.invoke('shareTimeline', {
-      "img_url": imgUrl,
-      "img_width": "200",
-      "img_height": "200",
-      "link": lineLink,
-      "desc": descContent,
-      "title": shareTitle
-    }, function (res) {
-      //_report('timeline', res.err_msg);
-    });
-  }
-
-  function shareWeibo() {
-    WeixinJSBridge.invoke('shareWeibo', {
-      "content": descContent,
-      "url": lineLink,
-    }, function (res) {
-      //_report('weibo', res.err_msg);
-    });
-  }
-
-  // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
-  document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-    // 发送给好友
-    WeixinJSBridge.on('menu:share:appmessage', function (argv) {
-      shareFriend();
-    });
-    // 分享到朋友圈
-    WeixinJSBridge.on('menu:share:timeline', function (argv) {
-      shareTimeline();
-    });
-    // 分享到微博
-    WeixinJSBridge.on('menu:share:weibo', function (argv) {
-      shareWeibo();
-    });
-  }, false);
 
   //显示模板
-  function showMask(status) {
-
-    $(".modal").css({"top": 0});
+  function showMask() {
+      $(".modal-failed").css({
+        "top": 0
+      });
+      var offset = document.body.scrollTop;
+      var hall = window.innerHeight;
+      var width = window.innerWidth;
+      var hWindow = $(".modal-main").height();
+      var wWindow = $(".modal-main").outerWidth() + 20;
+      $(".modal-main").css("left", (width - wWindow) / 2);
+      $(".modal-main").css("top", (hall - 267) / 2);
+      $(".modal-failed").css("display", 'block');
+    }
+    //显示模板
+  function showMask_Success() {
+    $(".modal").css({
+      "top": 0
+    });
     var hall = window.innerHeight;
     var width = window.innerWidth;
     var hWindow = $(".modal-main").outerHeight() + 20;
@@ -139,17 +156,17 @@ $(function () {
     }
   }
 
-  $('.modal').on('click', function () {
-    setTimeout(function () {
-      $('.modal').css('display', 'none');
-    }, 500);
-  });
+  // $('.modal').on('click', function() {
+  //   setTimeout(function() {
+  //     $('.modal').css('display', 'none');
+  //   }, 500);
+  // });
 
-  $('.close').on('click', function () {
+  $('.close').on('click', function() {
     $('.modal').css("display", 'none');
   });
 
-  $(document).ready(function () {
+  $(document).ready(function() {
     $('#numberInput').focus();
   });
 

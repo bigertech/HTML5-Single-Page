@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>魅族魅蓝抽奖查询</title>
+  <title>100台魅蓝note开奖</title>
   <meta name="viewport" content="width=device-width height=device-height, initial-scale=1.0 user-scalable=no">
-  <meta http-equiv="Cache-Control" content="max-age=7200"/>
+  <meta http-equiv="Cache-Control" content="max-age=7200" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="keyword" content="魅蓝，抽奖，QQ空间，黄钻手机节，算法">
   <meta name="description" content="魅蓝公开抽奖算法">
@@ -26,69 +26,74 @@
 </head>
 
 <body>
-<!--[if lt IE 7]>
+  <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser.
   Please <a href="http://browsehappy.com/">upgrade your browser</a>
   to improve your experience.</p>
 <![endif]-->
 
-<div id="main">
-  <div class="container">
+  <div id="main">
+    <div class="container">
 
-    <span class="title">100 台魅蓝开奖</span>
-    <span class="title2">快来查询是否有你</span>
+      <span class="title">100台魅蓝note开奖</span>
+      <span class="title2">快来查询是否有你</span>
 
-    <form role="form" class="form">
-      <input type="text" id="numberInput" name="numberInput" class="form-control input-number" placeholder="请输入您的序列号">
-      <div id="commitButton" class="form-control btn-commit">确&nbsp;&nbsp;定</div>
-    </form>
-  </div>
-</div>
-
-<div class="modal modal-succeed" style="display: none">
-  <div class="modal-bg"></div>
-  <div class="modal-main">
-    <div class="modal-container modal-container-succed">
-    <div class="modal-success-main">
-      <span class="text-succeed good">恭喜你中奖了</span>
-      <span class="text-succeed">赶快把这个好消息分享给朋友吧</span>
-      <span class="text-atten attention">请关注魅蓝空间，我们将会在 24 日 12 点公布具体的领奖方式</span>
-      <span class="text-atten-sm">请关注魅蓝空间<br/>我们将会在 24 日 12 点公布具体的领奖方式</span>
+      <form role="form" class="form">
+        <input type="text" id="numberInput" name="numberInput" class="form-control input-number" placeholder="请输入你的关注序号">
+        <div id="commitButton" class="form-control btn-commit">确&nbsp;&nbsp;定</div>
+      </form>
     </div>
-    </div>
-    <img class="close" src="assets/images/close.png">
   </div>
-</div>
 
-<div class="modal modal-failed" style="display: none">
-  <div class="modal-bg"></div>
-  <div class="modal-main">
-    <div class="modal-container">
-      <div class="modal-failed-main">
-        <img src="assets/images/qrcode.png" class="qrcode">
-
-        <div class="failed">
-          <span class="text-failed">真可惜</span>
-          <span class="text-failed failed-center">这次运气不太好呀</span>
-          <span class="text-atten text-atten-failed">请关注笔戈科技，下次中奖的说不定就是你哦</span>
+  <div class="modal modal-succeed" style="display: none">
+    <div class="modal-bg"></div>
+    <div class="modal-main">
+      <div class="modal-container modal-container-succed">
+        <div class="modal-success-main">
+          <span class="text-succeed good">恭喜你中奖了，魅蓝note是你的</span>
+          <span class="text-succeed text-succeed2">快分享出去炫耀一下吧</span>
+          <span class="text-atten attention">添加微信号：bigertech，发奖第一时间告诉你</span>
+          <span class="text-atten-sm">添加微信号：bigertech，发奖第一时间告诉你</span>
         </div>
       </div>
+      <img class="close" src="assets/images/close.png">
     </div>
-    <img class="close" src="assets/images/close.png">
   </div>
-</div>
 
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="assets/js/main.js"></script>
-<script>
-  var _hmt = _hmt || [];
-  (function() {
-    var b = document.createElement("script");
-    b.src = "//hm.baidu.com/hm.js?897c5e90b15f7f050e35c66b6978bd2c";
-    var a = document.getElementsByTagName("script")[0];
-    a.parentNode.insertBefore(b, a)
-  })();
-</script>
+  <div class="modal modal-failed" style="display: none">
+    <div class="modal-bg"></div>
+    <div class="modal-main">
+      <div class="modal-container">
+        <div class="modal-failed-main">
+          <img src="assets/images/qrcode.jpg" class="qrcode">
+          <div class="failed">
+
+            <span class="text-atten text-atten-failed failed-small">少年，貌似没中奖</span>
+            <p class="text-atten text-atten-failed pc">微信扫扫二维码，</p>
+            <p class="text-atten text-atten-failed pc">或者添加微信号：bigertech</p>
+
+            <p class="text-atten text-atten-failed phone">添加下方微信号为好友</p>
+            <p class="weixin-code phone">bigertech</p>
+            <span class="text-failed">还有福利在那等你哦</span>
+
+          </div>
+        </div>
+      </div>
+      <img class="close" src="assets/images/close.png">
+    </div>
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var b = document.createElement("script");
+      b.src = "//hm.baidu.com/hm.js?897c5e90b15f7f050e35c66b6978bd2c";
+      var a = document.getElementsByTagName("script")[0];
+      a.parentNode.insertBefore(b, a)
+    })();
+  </script>
 </body>
 
 </html>
