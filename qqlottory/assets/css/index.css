@@ -11,61 +11,39 @@ body {
 }
 #main {
   height: 100%;
-  background: url("../images/background.png") fixed center center no-repeat;
+  background: url("../images/background.png") center center no-repeat;
   background-size: cover;
   width: 100%;
 }
-.bg-img {
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -10;
-  margin-top: 0;
-  overflow: hidden;
+.container {
+  position: relative;
+  top: 21%;
 }
-.img-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-.title,
-.title2 {
-  display: block;
+#title {
   text-align: center;
   color: #fff;
-  font-size: 68px;
+  font-size: 36px;
 }
-.title {
-  padding-top: 170px;
+#title p {
+  margin: 0;
+}
+#title .title {
   font-weight: bold;
 }
-.title2 {
-  padding-top: 20px;
-}
 .form {
-  width: 336px;
+  width: 178px;
   margin: 0 auto;
+  padding-top: 44px;
 }
-.form-control {
+.form .form-control {
   border-radius: 5px;
   width: 100%;
-  font-size: 24px;
-  height: 74px;
+  font-size: 14px;
+  height: 39px;
+  line-height: 39px;
 }
-.input-number {
-  width: 100%;
-  margin-top: 80px;
-  border: 3px solid #dfdfdf;
-  text-align: center;
-}
-.btn-commit {
-  margin-top: 32px;
+.form .btn-commit {
+  margin-top: 18px;
   padding: 0;
   border: 3px solid #d33a3a;
   background-color: #e54937;
@@ -73,7 +51,13 @@ body {
   z-index: 9999;
   cursor: pointer;
   text-align: center;
-  line-height: 74px;
+}
+.form .input-number {
+  border: 3px solid #dfdfdf;
+  padding: 0;
+  padding-left: 10px;
+  width: 168px;
+  color: #999;
 }
 .modal {
   position: fixed;
@@ -81,7 +65,7 @@ body {
   height: 100%;
   width: 100%;
 }
-.modal-bg {
+.modal .modal-bg {
   width: 100%;
   height: 100%;
   background: #fff;
@@ -164,42 +148,7 @@ p.phone {
 .qrcode {
   width: 142px;
 }
-@media screen and (max-width: 1441px) {
-  .title {
-    padding-top: 100px;
-  }
-  .title,
-  .title2 {
-    font-size: 50px;
-  }
-  .form {
-    width: 238px;
-  }
-  .form-control {
-    height: 50px;
-    font-size: 20px;
-  }
-  .input-number {
-    padding: 0;
-  }
-  .btn-commit {
-    line-height: 50px;
-  }
-}
 @media screen and (max-width: 768px) {
-  #main {
-    background: url("../images/background-sm.png") fixed center center no-repeat;
-  }
-  .title {
-    padding-top: 42px;
-  }
-  .title,
-  .title2 {
-    font-size: 42px;
-  }
-  .form-control {
-    height: 40px;
-  }
   .text-atten {
     display: none;
   }
@@ -263,26 +212,24 @@ p.phone {
   .failed-center {
     padding-bottom: 20px;
   }
-  .btn-commit {
-    line-height: 40px;
-  }
-  p {
-    line-height: 0;
-  }
 }
 @media screen and (max-width: 568px) {
-  .title {
-    padding-top: 40px;
+  .container {
+    top: 18%;
   }
-  .title2 {
-    padding-top: 0;
+  #title {
+    font-size: 30px;
   }
-  .title,
-  .title2 {
-    font-size: 35px;
+  .form {
+    padding-top: 30px;
   }
-  .input-number {
-    margin-top: 40px;
+  .form .btn-commit {
+    margin-top: 18px;
+  }
+}
+@media screen and (max-width: 356px) {
+  .container {
+    top: 10%;
   }
 }
 ::-webkit-input-placeholder {
