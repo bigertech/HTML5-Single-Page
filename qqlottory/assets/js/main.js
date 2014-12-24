@@ -5,23 +5,54 @@
  */
 
 $(function() {
+  if (!Array.indexOf) {
+    Array.prototype.indexOf = function(obj) {
+      for (var i = 0; i < this.length; i++) {
+        if (this[i] == obj) {
+          return i;
+        }
+      }
+      return -1;
+    }
+  }
 
   function isLucer() {
     var code = parseInt($('#numberInput').val());
     if ($('#numberInput').val() === "") {
       return false;
     }
-
     var random = Math.ceil((Math.random() * 3));
-    var luckyNumber = getLucker(3076.49, 10591.54, 65302, 10); //计算中奖号码
-    var result = $.inArray(code, luckyNumber); //是否为中奖号码
+    var luckyNumber = getLucker(3039.21, 10614.12, 1133261, 100); //计算中奖号码
+    var result = luckyNumber.indexOf(code); //是否为中奖号码
     var isLucker = result >= 0 ? true : false;
-
+    if (isIE()) {
+      if (isLucker) {
+        alert('恭喜你中奖了，魅蓝note是你的，加微信号：bigertech，发奖第一时间告诉你');
+      } else {
+        alert('少年，貌似没中奖，添加微信号：bigertech，还有福利在那等你哦');
+      }
+      return false;
+    }
     if (isLucker) {
       showMask("1");
     } else {
       showMask("0");
     }
+  }
+
+  function isIE() {
+    if (navigator.userAgent.indexOf("MSIE") > 0) {
+      if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+        return true;
+      }
+      if (navigator.userAgent.indexOf("MSIE 7.0") > 0) {
+        return true;
+      }
+      if (navigator.userAgent.indexOf("MSIE 8.0") > 0) { //这里是重点，你懂的
+        return true;
+      }
+    }
+    return false;
   }
 
   $("#numberInput").keydown(function(event) {
@@ -41,27 +72,27 @@ $(function() {
    * @param count
    */
   function getLucker(sz, ss, totalPeople, count) {
-    var seed = 1224;
-    var result = [];
-    if (count === 0) {
-      throw new Error('The param count should not be zereo!');
+      var seed = 1223;
+      var result = [];
+      if (count === 0) {
+        throw new Error('The param count should not be zereo!');
+      }
+      var base = sz * ss * 10000;
+
+      base = base.toString().split('').reverse().join(''); // 反转
+
+      base = parseInt(base); // 取整
+      var luckNum = (base % totalPeople) + 1;
+      result.push(luckNum);
+
+      for (var i = 1; i < count; i++) {
+        var nextNum = (luckNum + seed * i) % totalPeople;
+        result.push(nextNum);
+      }
+      return result;
     }
-    var base = sz * ss * 10000;
-
-    base = base.toString().split('').reverse().join(''); // 反转
-
-    base = parseInt(base); // 取整
-    var luckNum = (base % totalPeople) + 1;
-    result.push(luckNum);
-
-    for (var i = 1; i < count; i++) {
-      var nextNum = (luckNum + seed * i) % totalPeople;
-      result.push(nextNum);
-    }
-    return result;
-  }
-  if (-[1, ]) {
-
+    //getLucker(3039.21,10614.12,100)
+  if (typeof window.WeixinJSBridge !== 'undefined' && typeof window.WeixinJSBridge.invoke !== 'undefined') {
 
     var imgUrl =
       'http://www.bigertech.com/project/qzone/assets/images/qzone.jpg';
@@ -123,27 +154,15 @@ $(function() {
   }
 
   //显示模板
-  function showMask() {
-      $(".modal-failed").css({
-        "top": 0
-      });
-      var offset = document.body.scrollTop;
-      var hall = window.innerHeight;
-      var width = window.innerWidth;
-      var hWindow = $(".modal-main").height();
-      var wWindow = $(".modal-main").outerWidth() + 20;
-      $(".modal-main").css("left", (width - wWindow) / 2);
-      $(".modal-main").css("top", (hall - 267) / 2);
-      $(".modal-failed").css("display", 'block');
-    }
-    //显示模板
-  function showMask_Success() {
+  //显示模板
+  function showMask(status) {
+
     $(".modal").css({
       "top": 0
     });
     var hall = window.innerHeight;
     var width = window.innerWidth;
-    var hWindow = $(".modal-main").outerHeight() + 20;
+    var hWindow = $(".modal-main").innerHeight() + 20;
     var wWindow = $(".modal-main").outerWidth() + 20;
 
     $(".modal-main").css("left", (width - wWindow) / 2);
@@ -156,11 +175,11 @@ $(function() {
     }
   }
 
-  // $('.modal').on('click', function() {
-  //   setTimeout(function() {
-  //     $('.modal').css('display', 'none');
-  //   }, 500);
-  // });
+  $('.modal').on('click', function() {
+    setTimeout(function() {
+      $('.modal').css('display', 'none');
+    }, 800);
+  });
 
   $('.close').on('click', function() {
     $('.modal').css("display", 'none');
