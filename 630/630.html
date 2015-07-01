@@ -43,7 +43,7 @@
 <script type="text/javascript" src="http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url=http://test.weixin.bigertech.com/h5/630/630.html&callback=jsonpCallback"></script>
 <script type="text/javascript">
   wx.config({
-    debug: true,
+    debug: false,
     appId: 'wxd98888751036c960',
     timestamp: sign.timestamp,
     nonceStr: sign.nonceStr,
@@ -67,6 +67,7 @@
       success: function () {
         // 用户确认分享后执行的回调函数
         // window.location.href = 'http://wan.bigertech.com';
+        alert("朋友圈分享成功！");
         HYPE.documents['630'].showNextScene();
       },
       cancel: function () {
@@ -85,6 +86,7 @@
       success: function () {
         // 用户确认分享后执行的回调函数
         // window.location.href = 'http://wan.bigertech.com';
+        alert("发送至朋友成功！");
         HYPE.documents['630'].showNextScene();
       },
       cancel: function () {
