@@ -61,7 +61,7 @@
 <script type="text/javascript" src="http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url=http://test.weixin.bigertech.com/h5/630/index.html&callback=jsonpCallback"></script>
 <script type="text/javascript">
   wx.config({
-    debug: false,
+    debug: true,
     appId: 'wxd98888751036c960',
     timestamp: sign.timestamp,
     nonceStr: sign.nonceStr,
@@ -78,7 +78,7 @@
     HYPE.documents['630'].showSceneNamed('pp1', HYPE.documents['630'].kSceneTransitionCrossfade, 1.1)
   }
 
-  var cur_href = 'http://test.weixin.bigertech.com/h5/630/index.html';
+  var cur_href = window.location.href;//'http://test.weixin.bigertech.com/h5/630/index.html';
   //var cur_href = 'http://weixin.res.meizu.com/mx5story/index.html';
   
   var img_url = 'http://test.weixin.bigertech.com/h5/630/mx5.jpg';
