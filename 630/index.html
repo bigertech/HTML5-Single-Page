@@ -44,14 +44,20 @@
   var sign;
   function jsonpCallback(data) {
     sign = data.sign;
+    console.log("ok");
   }
+
+  var str = "http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url="
   var href = window.location.href;
-  if (href.indexOf("?") > 0) {
-      window.location.href = "http://test.weixin.bigertech.com/h5/630/index.html";
-  }
+  href += '&callback=jsonpCallback';
+  str += href;
+
+  var script_elem = document.createElement("script");
+  script_elem.src = str;
+  document.body.appendChild(script_elem);
 </script>
 <!-- <script type="text/javascript" src="http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url=http://weixin.res.meizu.com/mx5story/index.html&callback=jsonpCallback"></script> -->
-<script type="text/javascript" src="http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url=http://test.weixin.bigertech.com/h5/630/index.html&callback=jsonpCallback"></script>
+<!-- <script type="text/javascript" src="http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url=http://test.weixin.bigertech.com/h5/630/index.html&callback=jsonpCallback"></script> -->
 <script type="text/javascript">
   wx.config({
     debug: true,
