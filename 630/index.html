@@ -62,12 +62,12 @@
 
   var str = "http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&callback=jsonpCallback&url="
   var href = encodeURIComponent(window.location.href);
-  console.log();
+
   // if (href.indexOf('isappinstalled') > -1) {
   //   window.location.href='http://test.weixin.bigertech.com/h5/630/index.html?a=b';
   // }
   var script_elem = document.createElement("script");
-  script_elem.src = str;
+  script_elem.src = str + href;
   document.body.appendChild(script_elem);
 </script>
 <!-- <script type="text/javascript" src="http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url=http://weixin.res.meizu.com/mx5story/index.html&callback=jsonpCallback"></script> -->
