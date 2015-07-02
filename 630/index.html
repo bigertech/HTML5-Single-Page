@@ -3,7 +3,7 @@
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
-	
+
 	<title>魅族MX5发布，老板给她500万…</title>
 	<style>
 		html {
@@ -20,8 +20,8 @@
 
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, width=device-width" />
 
-	
-	
+
+
 	<script>
 		/*window.onload = function() {
 			HYPE.documents['630'].showSceneNamed('pp1', hypeDocument.kSceneTransitionCrossfade, 1.1)
@@ -44,7 +44,6 @@
   var sign;
   function jsonpCallback(data) {
     sign = data.sign;
-    console.log("ok");
   }
 
   var str = "http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url="
@@ -56,11 +55,10 @@
   script_elem.src = str;
   document.body.appendChild(script_elem);
 </script>
-<!-- <script type="text/javascript" src="http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url=http://weixin.res.meizu.com/mx5story/index.html&callback=jsonpCallback"></script> -->
-<!-- <script type="text/javascript" src="http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&url=http://test.weixin.bigertech.com/h5/630/index.html&callback=jsonpCallback"></script> -->
+
 <script type="text/javascript">
   wx.config({
-    debug: true,
+    debug: false,
     appId: 'wxd98888751036c960',
     timestamp: sign.timestamp,
     nonceStr: sign.nonceStr,
@@ -77,11 +75,11 @@
     HYPE.documents['630'].showSceneNamed('pp1', HYPE.documents['630'].kSceneTransitionCrossfade, 1.1)
   }
 
-  var cur_href = 'http://test.weixin.bigertech.com/h5/630/index.html';
-  //var cur_href = 'http://weixin.res.meizu.com/mx5story/index.html';
-  
-  var img_url = 'http://test.weixin.bigertech.com/h5/630/mx5.jpg';
-  //var img_url = 'http://weixin.res.meizu.com/mx5story/mx5.jpg';
+  //var cur_href = 'http://test.weixin.bigertech.com/h5/630/index.html';
+  var cur_href = 'http://weixin.res.meizu.com/mx5story/index.html';
+
+  //var img_url = 'http://test.weixin.bigertech.com/h5/630/mx5.jpg';
+  var img_url = 'http://weixin.res.meizu.com/mx5story/mx5.jpg';
 
   wx.ready(function () {
     // 在这里调用 API
@@ -125,7 +123,7 @@
   (function() {
     var hm = document.createElement("script");
     hm.src = "//hm.baidu.com/hm.js?23089a23a7e5c32e6098e938599c5c9b";
-    var s = document.getElementsByTagName("script")[0]; 
+    var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hm, s);
   })();
   </script>
