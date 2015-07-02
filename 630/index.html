@@ -61,7 +61,7 @@
   }
 
   var str = "http://test.weixin.bigertech.com/api/sign?appId=wxd98888751036c960&callback=jsonpCallback&url="
-  var href = encodeURIComponent(window.location.href);
+  var href = encodeURIComponent(window.location.href.split('#')[0]);
 
   // if (href.indexOf('isappinstalled') > -1) {
   //   window.location.href='http://test.weixin.bigertech.com/h5/630/index.html?a=b';
