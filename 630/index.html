@@ -40,7 +40,7 @@
   function jsonpCallback(data) {
     sign = data.sign;
     wx.config({
-      debug: true,
+      debug: false,
       appId: 'wxd98888751036c960',
       timestamp: sign.timestamp,
       nonceStr: sign.nonceStr,
